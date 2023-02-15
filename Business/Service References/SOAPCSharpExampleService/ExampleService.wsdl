@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectResult" type="tns:ExampleServiceSelect" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleServiceSelect">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageVO" type="tns:MessageVO" />
+          <s:element minOccurs="0" maxOccurs="1" name="Example" type="tns:Example" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessageVO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Example">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SOAPKeyAuth" type="tns:SOAPKeyAuth" />
+      <s:complexType name="SOAPKeyAuth">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="exampleInsertDTO" type="tns:ExampleInsertDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleInsertDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertResult" type="tns:ExampleServiceInsert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleServiceInsert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageVO" type="tns:MessageVO" />
+          <s:element minOccurs="0" maxOccurs="1" name="Example" type="tns:Example" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="example" type="tns:Example" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateResult" type="tns:ExampleServiceUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleServiceUpdate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageVO" type="tns:MessageVO" />
+          <s:element minOccurs="1" maxOccurs="1" name="Updated" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteResult" type="tns:ExampleServiceDelete" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleServiceDelete">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageVO" type="tns:MessageVO" />
+          <s:element minOccurs="1" maxOccurs="1" name="Delete" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="List">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="exampleListDTO" type="tns:ExampleListDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleListDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PageIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListResult" type="tns:ExampleServiceList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleServiceList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageVO" type="tns:MessageVO" />
+          <s:element minOccurs="0" maxOccurs="1" name="Examples" type="tns:ArrayOfExample" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfExample">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Example" nillable="true" type="tns:Example" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TotalRecords">
+        <s:complexType />
+      </s:element>
+      <s:element name="TotalRecordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TotalRecordsResult" type="tns:ExampleServiceTotalRecords" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleServiceTotalRecords">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageVO" type="tns:MessageVO" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalRecords" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Excel">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExcelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcelResult" type="tns:ExampleServiceExcel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleServiceExcel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageVO" type="tns:MessageVO" />
+          <s:element minOccurs="0" maxOccurs="1" name="Excel" type="tns:ExampleExcelDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExampleExcelDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileContent" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PDF">
+        <s:complexType />
+      </s:element>
+      <s:element name="PDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PDFResult" type="tns:ExampleServicePDF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExampleServicePDF">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageVO" type="tns:MessageVO" />
+          <s:element minOccurs="0" maxOccurs="1" name="PDF" type="tns:ExamplePDFDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExamplePDFDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileContent" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Select" />
+  </wsdl:message>
+  <wsdl:message name="SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectSOAPKeyAuth">
+    <wsdl:part name="SOAPKeyAuth" element="tns:SOAPKeyAuth" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSOAPKeyAuth">
+    <wsdl:part name="SOAPKeyAuth" element="tns:SOAPKeyAuth" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSOAPKeyAuth">
+    <wsdl:part name="SOAPKeyAuth" element="tns:SOAPKeyAuth" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSOAPKeyAuth">
+    <wsdl:part name="SOAPKeyAuth" element="tns:SOAPKeyAuth" />
+  </wsdl:message>
+  <wsdl:message name="ListSoapIn">
+    <wsdl:part name="parameters" element="tns:List" />
+  </wsdl:message>
+  <wsdl:message name="ListSoapOut">
+    <wsdl:part name="parameters" element="tns:ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSOAPKeyAuth">
+    <wsdl:part name="SOAPKeyAuth" element="tns:SOAPKeyAuth" />
+  </wsdl:message>
+  <wsdl:message name="TotalRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:TotalRecords" />
+  </wsdl:message>
+  <wsdl:message name="TotalRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:TotalRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TotalRecordsSOAPKeyAuth">
+    <wsdl:part name="SOAPKeyAuth" element="tns:SOAPKeyAuth" />
+  </wsdl:message>
+  <wsdl:message name="ExcelSoapIn">
+    <wsdl:part name="parameters" element="tns:Excel" />
+  </wsdl:message>
+  <wsdl:message name="ExcelSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcelSOAPKeyAuth">
+    <wsdl:part name="SOAPKeyAuth" element="tns:SOAPKeyAuth" />
+  </wsdl:message>
+  <wsdl:message name="PDFSoapIn">
+    <wsdl:part name="parameters" element="tns:PDF" />
+  </wsdl:message>
+  <wsdl:message name="PDFSoapOut">
+    <wsdl:part name="parameters" element="tns:PDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDFSOAPKeyAuth">
+    <wsdl:part name="SOAPKeyAuth" element="tns:SOAPKeyAuth" />
+  </wsdl:message>
+  <wsdl:portType name="ExampleServiceSoap">
+    <wsdl:operation name="Select">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para seleccionar Example</wsdl:documentation>
+      <wsdl:input message="tns:SelectSoapIn" />
+      <wsdl:output message="tns:SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para insertar Example</wsdl:documentation>
+      <wsdl:input message="tns:InsertSoapIn" />
+      <wsdl:output message="tns:InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para actualizar Example</wsdl:documentation>
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para eliminar entidad Example</wsdl:documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para listar Example</wsdl:documentation>
+      <wsdl:input message="tns:ListSoapIn" />
+      <wsdl:output message="tns:ListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalRecords">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para contar registros de entidad Example</wsdl:documentation>
+      <wsdl:input message="tns:TotalRecordsSoapIn" />
+      <wsdl:output message="tns:TotalRecordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Excel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para retornar Excel</wsdl:documentation>
+      <wsdl:input message="tns:ExcelSoapIn" />
+      <wsdl:output message="tns:ExcelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PDF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para retornar PDF</wsdl:documentation>
+      <wsdl:input message="tns:PDFSoapIn" />
+      <wsdl:output message="tns:PDFSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExampleServiceSoap" type="tns:ExampleServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Select">
+      <soap:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SelectSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InsertSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <soap:operation soapAction="http://tempuri.org/List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalRecords">
+      <soap:operation soapAction="http://tempuri.org/TotalRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TotalRecordsSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excel">
+      <soap:operation soapAction="http://tempuri.org/Excel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExcelSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PDF">
+      <soap:operation soapAction="http://tempuri.org/PDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PDFSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExampleServiceSoap12" type="tns:ExampleServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Select">
+      <soap12:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SelectSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <soap12:operation soapAction="http://tempuri.org/Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InsertSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <soap12:operation soapAction="http://tempuri.org/List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalRecords">
+      <soap12:operation soapAction="http://tempuri.org/TotalRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TotalRecordsSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excel">
+      <soap12:operation soapAction="http://tempuri.org/Excel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExcelSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PDF">
+      <soap12:operation soapAction="http://tempuri.org/PDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PDFSOAPKeyAuth" part="SOAPKeyAuth" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExampleService">
+    <wsdl:port name="ExampleServiceSoap" binding="tns:ExampleServiceSoap">
+      <soap:address location="http://localhost:53462/Services/ExampleService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExampleServiceSoap12" binding="tns:ExampleServiceSoap12">
+      <soap12:address location="http://localhost:53462/Services/ExampleService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.css" />    
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="../JS/useful.js"></script>
+    <title>Mensajes</title>
+</head>
+<body>
+    <header class="container-fluid bg-light">
+        <div class="container">
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="Messages.html">
+                    <img src="../web-64.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                    WebMVCCSharp
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="margin-bottom: 40px;">
+        <div class="card bg-light mb-3" style="max-width: 28rem; margin:auto;">
+            <div class="card-header"><h3 class="card-title text-center" style="margin-top:1em; font-family:Times New Roman;">Mensajes</h3></div>
+            <div class="card-body">
+                <ol id="headers" style="margin-left:1.5rem;margin-right:2rem;margin-bottom:1.5rem;margin-top:1rem;">
+                    <li><p id="parametersNull" style="font-weight: bold;">Parámetro {0} no puede ser nulo</p></li>
+                    <li><p id="parametersAtZero" style="font-weight: bold;">Parámetro {0} debe ser mayor a 0</p></li>
+                    <li><p id="parameterMustBeGreaterThanOrEqualToZero" style="font-weight: bold;">Parámetro {0} debe ser mayor o igual que 0</p></li>
+                    <li><p id="maximunParameterLengthCharacter" style="font-weight: bold;">Parámetro {0} no debe ser mayor a {1} caracteres de largo</p></li>
+                    <li><p id="parameterNotSelected" style="font-weight: bold;">Parámetro {0} no esta seleccionado. Debe seleccionar una opcion</p></li>
+                    <li><p id="emptyParameters" style="font-weight: bold;">Parámetro {0} no puede estar vacio</p></li>
+                    <li><p id="dateTimeParametersNoInitialized" style="font-weight: bold;">Parámetro {0} debe esta inicializado</p></li>
+                    <li><p id="dateTimeParameterGreaterThanTheCurrentDate" style="font-weight: bold;">Parámetro {0} no puede ser mayor a la fecha actual</p></li>
+                    <li><p id="invalidFormatParameters" style="font-weight: bold;">Parámetro {0} no es válido</p></li>
+                    <li><p id="formatMustBe" style="font-weight: bold;">Parámetro {0} no es válido. El formato debe ser {1}</p></li>
+                    <li><p id="correctCheckMessage" style="font-weight: bold;">Servicio responde correctamente</p></li>
+                    <li><p id="incorrectCheckMessage" style="font-weight: bold;">Servicio no responde correctamente, funcionalidad no se ha ejecutado segun lo esperado</p></li>
+                    <li><p id="recordsNotFound" style="font-weight: bold;">No existen registros encontrados</p></li>
+                    <li><p id="recordsInsertSuccessfully" style="font-weight: bold;">Registro insertado correctamente</p></li>
+                    <li><p id="recordsNotInsertCorrectly" style="font-weight: bold;">Registro no ha sido insertado correctamente</p></li>
+                    <li><p id="recordsUpdateSuccessfully" style="font-weight: bold;">Registro actualizado correctamente</p></li>
+                    <li><p id="recordsNotUpdateCorrectly" style="font-weight: bold;">Registro no ha sido actualizado correctamente</p></li>
+                    <li><p id="recordsDeletedSuccessfully" style="font-weight: bold;">Registro eliminado correctamente</p></li>
+                    <li><p id="recordsNotDeletedCorrectly" style="font-weight: bold;">Registro no ha sido eliminado correctamente</p></li>
+                    <li><p id="noProcessCompleted" style="font-weight: bold;">No se han realizado trabajos internos</p></li>
+                </ol>
+            </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 28rem; margin:auto;">
+            <div class="card-header"><h3 class="card-title text-center" style="margin-top:1em; font-family:Times New Roman;">Títulos</h3></div>
+            <div class="card-body">
+                <ol id="headers" style="margin-left:1.5rem;margin-right:1.5rem;margin-bottom:1.5rem;margin-top:1rem;">
+                    <li><p id="requeridTitle" style="font-weight: bold;">Requerido</p></li>
+                    <li><p id="exceptionTitle" style="font-weight: bold;">Error</p></li>
+                    <li><p id="notFoundTitle" style="font-weight: bold;">No Encontrado</p></li>
+                    <li><p id="checkTitle" style="font-weight: bold;">Verificacion de Servicio</p></li>
+                    <li><p id="completedProcessTitle" style="font-weight: bold;">Proceso completado</p></li>
+                    <li><p id="processNotCompletedTitle" style="font-weight: bold;">Proceso no completado</p></li>
+                    <li><p id="noProcessCompletedtTitle" style="font-weight: bold;">Sin proceso trabajado</p></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    © Copyright <strong><span>IgnacioChávez <label id="anio"></label> </span></strong>. Todos Los Derechos Reservados
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
