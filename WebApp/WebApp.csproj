@@ -82,6 +82,7 @@
     <Content Include="Contents\Useful\Messages.html" />
     <Content Include="Contents\web-64.png" />
     <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Pages\Check\Check.aspx" />
     <Content Include="Pages\Check\SOAPCSharpCheck.aspx" />
@@ -138,6 +139,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Check\Check.aspx.cs">
       <DependentUpon>Check.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

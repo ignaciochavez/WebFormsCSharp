@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div style="min-height: 78.3vh;">
-        <div class="mt-3 pb-3 col-md-6 container" style="border: 3px solid rgba(50, 50, 50, 0.3); border-radius: 6px;">
+        <div class="mt-3 pb-3 col-md-6 container" style="border: 1px solid rgba(50, 50, 50, 0.3); border-radius: 6px;">
             <div class="row">
                 <div class="col-md-12 text-center my-auto mx-auto">
                     <h1 class="mt-3">Insertar</h1>
